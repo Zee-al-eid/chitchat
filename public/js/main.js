@@ -7,7 +7,7 @@ const userList = document.getElementById('users');
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 });
-var audio = new Audio('ting.mp3');
+
 const socket = io();
 
 // Join chatroom
@@ -18,7 +18,7 @@ socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
 });
-audio.play();
+
 // Message from server
 socket.on('message', message => {
   console.log(message);
