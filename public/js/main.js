@@ -18,7 +18,7 @@ socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
 });
-
+audio.play();
 // Message from server
 socket.on('message', message => {
   console.log(message);
@@ -63,7 +63,6 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
-  audio.play();
 }
 
 // Add room name to DOM
