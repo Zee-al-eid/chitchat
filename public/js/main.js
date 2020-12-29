@@ -7,7 +7,7 @@ const userList = document.getElementById('users');
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 });
-
+var audio = new Audio('ting.mp3');
 const socket = io();
 
 // Join chatroom
@@ -63,6 +63,7 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
+  audio.play();
 }
 
 // Add room name to DOM
