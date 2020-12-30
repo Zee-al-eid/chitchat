@@ -215,7 +215,7 @@ a {
     margin: 0;
   }
   .chat-container {
-    max-width: 100vh;
+    max-width: 98vh;
     margin: 3px;
   }
   .chat-messages {
