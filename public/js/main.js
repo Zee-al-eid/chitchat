@@ -1,5 +1,3 @@
-const { getCurrentUser } = require("../../utils/users");
-
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
@@ -55,12 +53,7 @@ chatForm.addEventListener('submit', e => {
 function outputMessage(message) {
   const div = document.createElement('div');
   div.classList.add('message');
-  if (message.username != getCurrentUser ){
-    message.position = 'left'
-  }
   div.classList.add(message.position);
-  if(message.position != 'right'){ 
-    audio.play();}
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = `${message.username} `;
@@ -71,6 +64,8 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
+  if(message.position =='left'){ 
+    audio.play();}
   }
 
 // Add room name to DOM
