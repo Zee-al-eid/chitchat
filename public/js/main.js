@@ -2,7 +2,15 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
-
+const hamburger = document.querySelector(".fa-bars")
+const chatSidebar = document.querySelector(".chat-sidebar")
+const items = document.querySelectorAll(".items");
+hamburger.addEventListener("click", () => {
+  chatSidebar.classList.toggle("open");
+  items.forEach(item => {
+    item.classList.toggle("fade");
+  });
+});
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
