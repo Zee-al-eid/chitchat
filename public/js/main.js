@@ -64,9 +64,9 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
-  if(position =='left'){ 
-    audio.play();
-}}
+  if(message.position =='left'){ 
+    audio.play();}
+  }
 
 // Add room name to DOM
 function outputRoomName(room) {
