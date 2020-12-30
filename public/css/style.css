@@ -94,6 +94,7 @@ a {
 .left {
   float: left;
   clear: both;
+  background-color: #bd513e;
 }
 .right {
   float: right;
