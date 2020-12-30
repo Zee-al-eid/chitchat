@@ -91,9 +91,18 @@ a {
   max-height: 500px;
   overflow-y: scroll;
 }
+.left {
+  float: left;
+  clear: both;
+}
+.right {
+  float: right;
+  clear: both;
+}
 
 .chat-messages .message {
   padding: 10px;
+  width: 60%;
   margin-bottom: 15px;
   background-color: var(--light-color);
   border-radius: 5px;

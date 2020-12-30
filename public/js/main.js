@@ -9,6 +9,7 @@ const { username, room } = Qs.parse(location.search, {
 });
 
 const socket = io();
+var audio = new Audio('ting.mp3');
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
@@ -21,7 +22,6 @@ socket.on('roomUsers', ({ room, users }) => {
 
 // Message from server
 socket.on('message', message => {
-  console.log(message);
   outputMessage(message);
 
   // Scroll down
@@ -53,6 +53,7 @@ chatForm.addEventListener('submit', e => {
 function outputMessage(message) {
   const div = document.createElement('div');
   div.classList.add('message');
+  div.classList.add(message.position);
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = `${message.username} `;
@@ -63,7 +64,9 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
-}
+  if(position =='left'){ 
+    audio.play();
+}}
 
 // Add room name to DOM
 function outputRoomName(room) {
