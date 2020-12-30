@@ -182,25 +182,14 @@ a {
   display: none;
 }
 @media (max-width: 700px) {
-  /* .chat-main {
+  .chat-main {
     display: block;
-  } */
-
+  }
   .chat-sidebar {
-    padding: 20px 10px 20px 7px;
     display: none;
-  }
-  .chat-sidebar h2 {
-    font-size: 1.5em;
-  }
-  .chat-sidebar h3 {
-    font-size: 1.1em;
   }
   .open {
     display: block;
-  }
-  .fade {
-    opacity: 1;
   }
   .fa-smile {
     display: none;
@@ -208,5 +197,14 @@ a {
   .fa-bars {
     display: inline;
     cursor: pointer;
+  }
+  .chat-header h1 {
+    font-size: 1.6em;
+  }
+  .btn {
+    font-size: 1em;
+  }
+  .chat-form-container {
+    padding: 15px 20px;
   }
 }
