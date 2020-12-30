@@ -207,4 +207,12 @@ a {
   .chat-form-container {
     padding: 15px 20px;
   }
+  form > .btn {
+    padding: 0px 8px 0 5px;
+  }
+  .chat-container {
+    min-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
 }
