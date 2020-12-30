@@ -50,14 +50,8 @@ chatForm.addEventListener('submit', e => {
 
 // Output message to DOM
 function outputMessage(message) {
-  const currentuser = getCurrentUser()
   const div = document.createElement('div');
   div.classList.add('message');
-  if (message.username != currentuser.username) {
-    message.position = 'left';
-  }
-  div.classList.add(message.position);
-  console.log(message.position)
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = `${message.username} `;
@@ -68,7 +62,7 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
-  }
+}
 
 // Add room name to DOM
 function outputRoomName(room) {

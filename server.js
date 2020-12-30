@@ -27,14 +27,14 @@ io.on('connection', socket => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChitChat!', 'left'));
+    socket.emit('message', formatMessage(botName, 'Welcome to ChitChat!'));
 
     // Broadcast when a user connects
     socket.broadcast
       .to(user.room)
       .emit(
         'message',
-        formatMessage(botName, `${user.username} has joined the chat`, 'left')
+        formatMessage(botName, `${user.username} has joined the chat`)
       );
 
     // Send users and room info
@@ -48,7 +48,7 @@ io.on('connection', socket => {
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
 
-    io.to(user.room).emit('message', formatMessage(user.username, msg, 'right'));
+    io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 
   // Runs when client disconnects
@@ -58,7 +58,7 @@ io.on('connection', socket => {
     if (user) {
       io.to(user.room).emit(
         'message',
-        formatMessage(botName, `${user.username} has left the chat`, 'left')
+        formatMessage(botName, `${user.username} has left the chat`)
       );
 
       // Send users and room info
