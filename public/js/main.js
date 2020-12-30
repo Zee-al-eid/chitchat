@@ -9,7 +9,7 @@ const { username, room } = Qs.parse(location.search, {
 });
 
 const socket = io();
-var audio = new Audio('ting.mp3');
+var audio = new Audio('./ting.mp3');
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
